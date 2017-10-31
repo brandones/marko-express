@@ -24,6 +24,7 @@ require('lasso').configure({
 app.use(require('lasso/middleware').serveStatic());
 
 app.get('/', function(req, res) {
+    req.customData =  'doggies';
     res.marko(indexTemplate, {
             name: 'Frank',
             count: 30,

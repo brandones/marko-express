@@ -11,6 +11,7 @@ class {
 <layout>
   <@content>
     <app-hello name=data.name addMessage=component.incrementMessages.bind(component) />
+    <p>It would be nice if we could also get ${out.global.req.customData} from req.</p>
     You have ${state.messageCount} new messages!
 
     <ul if(data.colors && data.colors.length)>
