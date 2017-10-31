@@ -1,7 +1,17 @@
+class {
+  onInput() {
+    this.state = { messageCount: 30 };
+  }
+
+  incrementMessages() {
+    this.state.messageCount++;
+  }
+}
+
 <layout>
   <@content>
-    <app-hello name=data.name/>
-    You have ${data.count} new messages!
+    <app-hello name=data.name addMessage=component.incrementMessages.bind(component) />
+    You have ${state.messageCount} new messages!
 
     <ul if(data.colors && data.colors.length)>
         <li style="color: ${color}" for(color in data.colors)>${color}</li>
