@@ -8,11 +8,9 @@ class {
   }
 }
 
-<layout>
+<layout foo=state.messageCount>
   <@content>
     <app-hello name=data.name addMessage=component.incrementMessages.bind(component) />
-    <p>It would be nice if we could also get ${out.global.req.customData} from req.</p>
-    You have ${state.messageCount} new messages!
 
     <ul if(data.colors && data.colors.length)>
         <li style="color: ${color}" for(color in data.colors)>${color}</li>
